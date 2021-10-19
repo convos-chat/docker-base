@@ -7,8 +7,23 @@ RUN apk add --no-cache curl openssl perl perl-io-socket-ssl perl-net-ssleay wget
 ADD https://cpanmin.us/ /bin/cpanm
 RUN chmod 0755 /bin/cpanm
 
-RUN mkdir /base
-ADD https://raw.githubusercontent.com/convos-chat/convos/master/cpanfile /base/cpanfile
-RUN cd /base && /bin/cpanm -n -M https://cpan.metacpan.org .
+RUN /bin/cpanm -n -M https://cpan.metacpan.org \
+  Module::Install      \
+  Cpanel::JSON::XS     \
+  Crypt::Eksblowfish   \
+  DBD::SQLite          \
+  EV                   \
+  File::HomeDir        \
+  File::ReadBackwards  \
+  HTTP::AcceptLanguage \
+  Hailo                \
+  IO::Socket::Socks    \
+  IRC::Utils           \
+  Math::Calc::Parser   \
+  Net::LDAP            \
+  Parse::IRC           \
+  Text::Markdown       \
+  Time::Piece          \
+  Unicode::UTF8
 
 CMD ["sh"]
