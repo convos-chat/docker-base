@@ -26,4 +26,6 @@ RUN /bin/cpanm -n -M https://cpan.metacpan.org \
   Time::Piece          \
   Unicode::UTF8
 
+RUN apk del builddeps && rm -rf /root/.cpanm /var/cache/apk/*
+
 CMD ["sh"]
