@@ -12,6 +12,7 @@ RUN apk add --no-cache curl openssl perl perl-io-socket-ssl perl-net-ssleay wget
       Crypt::Eksblowfish   \
       DBD::SQLite          \
       EV                   \
+      File::chdir          \
       File::HomeDir        \
       File::ReadBackwards  \
       HTTP::AcceptLanguage \
@@ -23,7 +24,8 @@ RUN apk add --no-cache curl openssl perl perl-io-socket-ssl perl-net-ssleay wget
       Parse::IRC           \
       Text::Markdown       \
       Time::Piece          \
-      Unicode::UTF8     && \
+      Unicode::UTF8        \
+      YAML::XS          && \
     apk del builddeps && \
     rm -rf /root/.cpanm /var/cache/apk/*
 
