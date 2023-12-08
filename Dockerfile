@@ -1,4 +1,4 @@
-FROM alpine:3.18
+FROM alpine:3.19
 LABEL maintainer="contact@convos.chat"
 
 ADD https://cpanmin.us/ /bin/cpanm
