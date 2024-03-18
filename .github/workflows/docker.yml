@@ -1,9 +1,9 @@
 name: ghcr
 on:
   push:
-       branches:
-         - main
-         - marcus/docker-fix
+    branches:
+      - main
+      - marcus/docker-fix
 env:
   REGISTRY: ghcr.io
   IMAGE_NAME: ${{ github.repository }}
@@ -14,7 +14,6 @@ jobs:
     permissions:
       contents: read
       packages: write
-
     steps:
       - name: Check Out Repo
         uses: actions/checkout@v3
