@@ -4,6 +4,8 @@ LABEL maintainer="contact@convos.chat"
 ADD https://cpanmin.us/ /bin/cpanm
 RUN chmod 0755 /bin/cpanm
 
+ENV CRYPT_ARGON2_ARCH=NONE
+
 RUN apk add --no-cache curl openssl perl perl-io-socket-ssl perl-net-ssleay wget && \
   apk add --no-cache --virtual builddeps build-base perl-dev && \
   /bin/cpanm -n -M https://cpan.metacpan.org \
